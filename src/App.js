@@ -2,10 +2,15 @@ import './App.css';
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
 import Program from './components/Program';
+import ChannelList from './containers/ChannelList';
+import TrendingShows from './containers/TrendingShows';
+import MyBlog from './containers/MyBlog';
 
 // AppComponent -- Functional Comp with Named Fn 
 // Will have the layout
 function App() {
+
+  
   return (
     <div className="App">
       <Header></Header>
@@ -28,8 +33,34 @@ function App() {
 
         <hr />
         <div className="text-left">
-          <Program />
+          <h2>Featured TV Programmes | Props Demo and Events Demo </h2>
+          <Program name='Man Vs Wild' 
+                   time='8 PM'
+                   category='Adventure'>
+            Wild Adventure show by Bear Grylls
+          </Program>
+          <Program name='Planet Earth' 
+                   time='9 PM'
+                   category='Infotainment'>
+            Program on Planet Earth by David Attenborough
+          </Program>
         </div>
+
+        <div className="text-left">
+          <h2>TV Channels | States Demo </h2>
+          <ChannelList name='test'/>
+        </div>
+
+        <div className="text-left">
+          <hr />
+          <TrendingShows />
+        </div>
+
+        <div className="text-left">
+          <hr />
+          <MyBlog />
+        </div>
+
       </div>
       <Footer />
     </div>
